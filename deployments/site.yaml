@@ -1,0 +1,74 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: shiftylogic-live
+spec:
+  ports:
+    - port: 80
+      targetPort: 80
+  selector:
+    app: shiftylogic-live
+
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shiftylogic-live
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: shiftylogic-live
+  template:
+    metadata:
+      labels:
+        app: shiftylogic-live
+    spec:
+      containers:
+        - name: shiftylogic
+          image: ghcr.io/shiftylogic/sl-site:__DEPLOYMENT_TAG__
+          ports:
+            - containerPort: 80
+
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: shiftylogic-live-ingress
+  annotations:
+    cert-manager.io/issuer: "letsencrypt"
+    acme.cert-manager.io/http01-edit-in-place: "true"
+spec:
+  defaultBackend:
+    service:
+      name: sl-default-backend
+      port:
+        number: 80
+  tls:
+    - hosts:
+      - shiftylogic.com
+      - www.shiftylogic.com
+      secretName: shiftylogic-cert-live
+  rules:
+    - host: shiftylogic.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: shiftylogic-live
+                port:
+                  number: 80
+    - host: www.shiftylogic.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: shiftylogic-live
+                port:
+                  number: 80
