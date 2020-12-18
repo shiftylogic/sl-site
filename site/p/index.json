@@ -1,0 +1,17 @@
+{
+  "loc": "/p/index.md",
+  "posts": [{
+      "id": "first",
+      "loc": "/p/first.md",
+      "tags": ["general", "non-tech", "shit-posting"],
+      "title": "My first post",
+      "desc": "This is a decription line for the blog post."
+    }, {
+      "id": "num-2",
+      "loc": "/p/second-post.md",
+      "tags": ["music", "non-tech"],
+      "title": "The follow-up post",
+      "desc": "The day the music died!"
+    }
+  ]
+}

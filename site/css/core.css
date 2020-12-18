@@ -1,0 +1,96 @@
+/*
+ * Loading spinner styles
+ */
+.loader-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity .3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+}
+.loader-wrapper .loader {
+  height: 80px;
+  width: 80px;
+}
+
+.loader-wrapper.is-active {
+  opacity: 1;
+  z-index: 1;
+}
+
+
+/*
+ * Styles for blog content
+ */
+
+#blog-root {
+    min-height: 400px;
+}
+
+
+/*
+ * Landing page styles
+ */
+
+.sl-landing {
+    background-color: #000;
+    height: 100vh;
+}
+
+.sl-landing-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sl-landing-title {
+    font-size: 5rem;
+    font-family: "Lucida Console", Monaco, monospace;
+    text-transform: uppercase;
+}
+
+
+/*
+ * 404 page styles
+ */
+
+.sl-404 {
+    background-color: #000;
+    height: 100vh;
+}
+
+.sl-404-title {
+    font-size: 10rem;
+}
+
+
+/*
+ * Fancy spotlight helpers
+ */
+
+.spotlight-v {
+  background: linear-gradient(90deg, #000, #fff, #000);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  animation: anim-spot-v 7s linear infinite alternate;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+
+@keyframes anim-spot-v {
+  0% {
+    background-position: -350%;
+  }
+  100% {
+    background-position: 350%;
+  }
+}
+

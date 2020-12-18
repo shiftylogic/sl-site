@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/ico/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/ico/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <link rel="stylesheet" href="/css/core.css" />
+
+    <link rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/bulma/0.9.1/css/bulma.min.css"
+          integrity="sha512-ZRv40llEogRmoWgZwnsqke3HNzJ0kiI0+pcMgiz2bxO6Ew1DVBtWjVn0qjrXdT3+u+pSN36gLgmJiiQ3cQtyzA=="
+          crossorigin="anonymous" />
+
+    <!-- Code highlighting style -->
+    <link rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/themes/prism-tomorrow.min.css"
+          integrity="sha512-vswe+cgvic/XBoF1OcM/TeJ2FW0OofqAVdCZiEYkd6dwGXthvkSFWOoGGJgS2CW70VK5dQM5Oh+7ne47s74VTg=="
+          crossorigin="anonymous" />
+    <link rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/plugins/line-numbers/prism-line-numbers.min.css"
+          integrity="sha512-cbQXwDFK7lj2Fqfkuxbo5iD1dSbLlJGXGpfTDqbggqjHJeyzx88I3rfwjS38WJag/ihH7lzuGlGHpDBymLirZQ=="
+          crossorigin="anonymous" />
+    <link rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/plugins/match-braces/prism-match-braces.min.css"
+          integrity="sha512-SwPHdIEEQ3lKazpLV9+r1UH4HnpNVlYVdKYgBwD/8QuougtQj6xm5x2xladh3mC/bz+jVWkvYTpKCI1KWD1MWQ=="
+          crossorigin="anonymous" />
+
+    <title>Shifty Logic Blog</title>
+</head>
+
+<body>
+    <section class="section">
+        <div id="blog-root" class="container">
+            <div id="blog-progress" class="loader-wrapper is-active"><div class="loader"></div></div>
+            <div id="blog-error" class="notification is-danger is-hidden">
+                <p id="blog-message"></p>
+            </div>
+            <div id="blog-content" class="content is-hidden"></div>
+            <div id="blog-index" class="content is-hidden">
+            </div>
+        </div>
+    </section>
+
+    <!-- Library to render markdown documents -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/marked/1.1.1/marked.min.js"
+            integrity="sha512-KCyhJjC9VsBYne93226gCA0Lb+VlrngllQqeCmX+HxBBHTC4HX2FYgEc6jT0oXYrLgvfglK49ktTTc0KVC1+gQ=="
+            crossorigin="anonymous">
+    </script>
+
+    <!-- Fancy SVG icons -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js"
+            integrity="sha512-7x3zila4t2qNycrtZ31HO0NnJr8kg2VI67YLoRSyi9hGhRN66FHYWr7Axa9Y1J9tGYHVBPqIjSE1ogHrJTz51g=="
+            crossorigin="anonymous">
+    </script>
+
+    <!-- Language highlighting for code blocks -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/components/prism-core.min.js"
+            integrity="sha512-hqRrGU7ys5tkcqxx5FIZTBb7PkO2o3mU6U5+qB9b55kgMlBUT4J2wPwQfMCxeJW1fC8pBxuatxoH//z0FInhrA=="
+            crossorigin="anonymous"
+            data-manual>
+    </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/plugins/autoloader/prism-autoloader.min.js"
+            integrity="sha512-ROhjG07IRaPZsryG77+MVyx3ZT5q3sGEGENoGItwc9xgvx+dl+s3D8Ob1zPdbl/iKklMKp7uFemLJFDRw0bvig=="
+            crossorigin="anonymous">
+    </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/plugins/line-numbers/prism-line-numbers.min.js"
+            integrity="sha512-1oLZvExT5RaW4q2GgvRPf+XzVVGmsKirfZBRN7aifdOpvZ1L9idEncfMFlfHiQNGBA+Sev+alscSAT/xQ0rwXA=="
+            crossorigin="anonymous">
+    </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/plugins/match-braces/prism-match-braces.min.js"
+            integrity="sha512-lybNC2/VBERhCgDt5iHOl5nBB8+Z7KJ7Z5rL3DrZoQisrJfmi21oohG2h95M98vHDiyLjx9xZOoYPD0vzy4eMg=="
+            crossorigin="anonymous">
+    </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"
+            integrity="sha512-VTY+zyTivsIMZ+ANMHvwsnz0hIRHyu/I+7vLqaGaQs//PnQEuNyrLsCwNYo64H92vHojvj2Oiq7bfli0fTSDkQ=="
+            crossorigin="anonymous">
+    </script>
+
+    <script src="/js/core.js"></script>
+    <script src="/js/blog.js"></script>
+</body>
+
+</html>
