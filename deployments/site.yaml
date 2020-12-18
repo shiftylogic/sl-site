@@ -25,6 +25,8 @@ spec:
       labels:
         app: shiftylogic-live
     spec:
+      imagePullSecrets:
+        - name: sl-site-ghcr
       containers:
         - name: shiftylogic
           image: ghcr.io/shiftylogic/sl-site:__DEPLOYMENT_TAG__
@@ -38,7 +40,7 @@ kind: Ingress
 metadata:
   name: shiftylogic-live-ingress
   annotations:
-    cert-manager.io/issuer: "letsencrypt"
+    cert-manager.io/cluster-issuer: "letsencrypt"
     acme.cert-manager.io/http01-edit-in-place: "true"
 spec:
   defaultBackend:
